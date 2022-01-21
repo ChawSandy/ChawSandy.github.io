@@ -30,15 +30,20 @@
         let  js= document.myForm.js_mark.value;
         console.log(js);
 
-    
-        if( c <= 49 || java <= 49 || js <= 49 ){
+
+        if( c >100 || java >100 || js >100 ){
+        document.write("<h1>Every Students should get under 100 marks<h1>");
+
+        }else if( c <= 49 || java <= 49 || js <= 49 ){
          document.write("<h1>This Stutent fails<h1>");
            
          }else if (c > 80 || java > 80 || js > 80) {
          document.write("<h1>This Stutent Passes with Distinction<h1>");
+            
          }else
          {
          document.write("<h1>This Stutent Passes<h1>");
+            
          }
 
     }
