@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numberArray = [1,2,3,4,15,12];
+        console.log(numberArray[0]);
+        
+        let stringArray = Array('h','e','l','l','o');
+        console.log(stringArray[1]);
+
+        //value of different type
+        let myArray = ['h','i',1,2,3,['x','o','e',123]];
+        console.log(myArray[2]);
+        console.log(myArray[5]);
+        console.log(myArray[5][2]);
+        //Multi-Dimensional Arrays
+        let mulArray = [[1,2,3],[4,5,6],[7,8,9]];
+        console.log(mulArray[0][1]);
+        console.log(mulArray[1][1]);
+        console.log(mulArray[2][1]);
+
+        let fruits = [];
+        fruits[0] = 'apple';
+        fruits[1] = 'orange';
+        fruits[2] = 'banana';
+        fruits[3] ='mango';
+        console.log(fruits);
+        console.log(fruits.length);
+
+        fruits.push('pine');
+        console.log(fruits);
+
+        fruits.unshift('cherry');
+        console.log(fruits);
+
+        fruits.pop();
+        console.log(fruits);
+
+        fruits.shift();
+        console.log(fruits);
+
+        fruits.sort();
+        console.log(fruits);
+
+        fruits.reverse();
+        console.log(fruits);
+
+        let fruits_str = fruits.toString();
+        console.log(fruits_str);
+
+        let fruits_arr =  fruits_str.split(",");
+        console.log(fruits_arr);
+
+        let str = "Hello World";
+        console.log(str.split(''));
+        console.log(str.split(' '));
+        
+        let aArray = [1,2,3];
+        let bArray = ['a','b','c'];
+        let cArray = aArray.concat(bArray);
+        console.log(cArray);
+        let dArray = [...aArray,...bArray,...cArray];
+        console.log(dArray);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

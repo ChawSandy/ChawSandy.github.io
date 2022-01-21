@@ -162,17 +162,40 @@
 <center>
     <hr>
     <h2 id="com">Leave Comment</h2>
+    <table border="0" cellpadding="10">
+    <tbody>
     <form action="save.php" method="get">
-    <label for="name">Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
-    <input type="text" name="user_name" id="name" >
-    <br><br>
-    <label for="email">Email: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
-    <input type="email" name="user_email" id="email">
-    <br><br>
-    <label for="comment">Comment:</label>
-    <textarea name="comment" id="user_comment" cols="30" rows="10"></textarea>
-    <br><br>
+        <tr>
+            <td> 
+            <label for="name">Name: &nbsp; &nbsp; </label>
+            </td>
+            <td>
+            <input type="text" name="user_name" id="name" >
+            </td>
+       </tr>
+       <tr>
+           <td>
+            <label for="email">Email: &nbsp; &nbsp;</label>
+            </td>
+            <td>
+            <input type="email" name="user_email" id="email">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="comment">Comment:</label>
+            </td>
+            <td>
+                <textarea name="comment" id="user_comment" cols="30" rows="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" align="center">
     <button type="submit">Add</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
 </form>
 </center>
 

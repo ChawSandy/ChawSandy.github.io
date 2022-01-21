@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Result</title>
+</head>
+<body>
+    <form name="myForm">
+    <h1> Exam Result</h1>
+    <label for="turbo">Turbo C</label>
+    <input type="number" name="turbo_mark" id="tb_mark" placeholder="Enter Turbo" required >
+    <br><br>
+    <label for="java">Java</label>
+    <input type="number " name="ja_mark" id="ja_mark" placeholder="Enter Java Mark" required >
+    <br><br>
+    <label for="js">JavaScript</label>
+    <input type="number " name="js_mark" id="js_mark" placeholder="Enter JavaScript mark" required >
+    <br><br>
+    <button type="button"  onclick="result()" >Result</button>
+
+    <script>
+       function result(){
+        // alert("hello");
+        let c = document.myForm.turbo_mark.value;
+        console.log(c);
+        let java = document.myForm.ja_mark.value;
+        console.log(java);
+        let  js= document.myForm.js_mark.value;
+        console.log(js);
+
+    
+        if( c <= 49 || java <= 49 || js <= 49 ){
+         document.write("<h1>This Stutent fails<h1>");
+           
+         }else if (c > 80 || java > 80 || js > 80) {
+         document.write("<h1>This Stutent Passes with Distinction<h1>");
+         }else
+         {
+         document.write("<h1>This Stutent Passes<h1>");
+         }
+
+    }
+
+
+   
+     
+
+      
+      
+      
+
+    </script>
+</form>
+</body>
+</html>
