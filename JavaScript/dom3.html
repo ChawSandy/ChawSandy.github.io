@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">CSS DOM</h1>
+    <img src="jsph.jpg" alt="" id="jsph" ><br><br>
+    <button type="button" onclick="changeSize()">Click</button>
+    <br><br>
+    <img src="jsphoto.jpg" alt="" id="jsp" onmouseover="big()" onmouseout="nor()">
+    <script>
+        function changeSize(){
+            document.querySelector('#h1').style.backgroundColor ='orange';
+            document.querySelector('#h1').style.color ='white';
+            let img = document.querySelector('#jsph');
+            img.style.width ='500px';
+            img.style.height ='350px';
+
+        }
+
+        function big(){
+            let img1 = document.querySelector('#jsp');
+            img1.style.width ='500px';
+            img1.style.height ='350px';
+
+            
+        }
+        function nor(){
+            let img1 = document.querySelector('#jsp');
+            img1.style.width ='300px';
+            img1.style.height ='250px';
+        }
+
+
+
+    </script>
+</body>
+</html>

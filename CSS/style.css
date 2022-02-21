@@ -1,0 +1,270 @@
+/* universal selector */
+
+*{
+    background-color: #000000;
+    color: green;
+    /*remove margin and padding from html */
+    margin: 0px;
+    padding: 0px;
+}
+
+/* tag or element selector */
+h1{
+    text-align: center;
+
+    
+}
+h2{
+    /* color: #ff0000;hex code */
+    /* color: #f00;short hex codde */
+    color: rgb(255,0,0);
+    word-spacing: 10px;
+    text-align: center;
+
+
+}
+p{
+    color: #ffffff;
+  
+    text-transform: lowercase;
+
+
+}
+/* attributes selector */
+a[target="_blank"]{
+
+color: green;
+text-decoration:none ;
+}
+ /* ID Selctor */
+#idselector{
+    color: red;
+    text-indent: 50px;
+
+
+}
+/* Class Selector */
+.class_selector{
+    color: blue;
+    text-indent: 50px;
+    line-height: 40px;
+    word-spacing: 20px;
+    letter-spacing: 10px;
+}
+
+.left {
+    float:left; 
+    background:pink;
+    width:31%;
+    height:280px;
+    padding: 10px;
+    text-indent: 50px;
+}
+.center{
+    float:left; 
+    background:blue;
+    width:31%;
+    height:280px;
+    padding: 10px;
+    text-indent: 50px;
+}
+.right{
+    float:right; 
+    background:yellow;
+    width:31.388%;
+    height:280px;
+    padding: 10px;
+    text-indent: 50px;
+    
+}
+/* Descendent selector */
+.desc a{
+    color: red;
+}
+/* child Selector */
+.child>a{
+    background-color: yellow;
+}
+
+/* pseudo */
+a:link{
+    color: red;
+    letter-spacing: 5px;
+}
+a:hover{
+    color: green;
+}
+
+a:active{
+    background-color:yellow;
+    letter-spacing: 20px;
+}
+
+a:visited{
+   color: pink;
+}
+
+:target{
+    border:1px solid black ;
+    text-indent: 50px;
+    word-spacing: 20px;
+    line-height: 30px ;
+}
+
+/* Border */
+.borderOne{
+    border: 10px dotted white ;
+}
+.borderTwo{
+    border-left: 10px double red;
+}
+
+/* BorderStyle */
+
+.borderThree{
+    border-style:dotted ;
+}
+.stylemix{
+    /* border-style: dashed dotted solid double; */
+    /* T/R/B/L */
+    /* border-style:  dashed dotted solid;; */
+    /* T/LR/B */
+    border-style: dashed solid;
+    /* T&B/L&R */
+
+}
+.borderWidth{
+    border-width: 10px 20px 30px 40px;
+    border-style: solid;
+}
+.Margin{
+    margin:150px 120px 170px;
+     /* T/LR/B */
+    /* border-width: thin ;
+    border-style: solid; 
+    padding: 5px; */
+    margin-right: 30px;
+    border: 1px solid #ffffff;
+}
+.padding{
+    padding-left: 30px;
+    /* padding: 50px; */
+    border: 1px solid #ffffff;
+
+}
+
+.Inline{
+    border: 1px solid white;
+    width: 200px;
+    display: inline-block;
+
+}
+
+.block{
+    border: 1px solid green;
+    width: 400px;
+    display: inline-block;
+}
+/* float */
+.floatLeft img {
+    width: 38%;
+    float: left;
+}
+.clear{
+    clear: both;
+}
+
+.floatRight img{
+    width: 38%;
+    float: right;
+}
+
+.gridOne div, .gridTwo div,.gridThree div,.gridFour div,.gridFive div,.gridSix div{
+    color: #ffffff;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+.gridOne,.gridTwo,.gridThree,.gridFour,.gridFive,.gridSix{
+    display: grid;
+   grid-template-columns: auto auto auto;
+}
+.gridTwo{
+    grid-column-gap: 20px; 
+}
+.gridThree{
+    grid-row-gap:20px;
+}
+.gridFour{
+    grid-gap: 30px;
+}
+.columnAad{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.rowAdd{
+    grid-row-start: 3;
+    grid-row-end: 5;
+  
+
+}
+
+.relativeParent{
+    border: 1px solid white;
+    width: 600px;
+    height: 600px;
+}
+
+
+.relative{
+    border: 1px solid red;
+    width: 300px;
+    height: 350px;
+    position:relative;
+    top: 50px;
+    left: 50px;
+}
+
+.AbsoluteParent{
+    border: 1px solid white;
+    width: 600px;
+    height: 600px;
+    position: relative;
+}
+.Absolute{
+    border: 1px solid blue;
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 500px;
+    left: 500px;
+   
+}
+
+.fixedParent{
+    border: 1px solid white;
+    width: 600px;
+    height: 600px;
+}
+.fixed{
+    border: 1px solid green;
+    width: 300px;
+    height: 350px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+   
+}
+.Online{
+   font-family: 'Satisfy', cursive;
+
+}
+
+@font-face{
+    src:url(font/Cookie-Regular.ttf);
+    font-family: a;
+}
+.OffLine{
+    font-family: a;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="chanegeColor()" id="h1">Creat HTML Element</h1>
+    <button type="button" onclick="click_event()">Creat</button>
+    <br><br>
+    <input type="text"  name="name" id="name">
+    <button type="button" onclick="adding()">Add</button>
+    <ul id="ul">
+        <li>Apple</li>
+    </ul>
+    <script>
+          //about Element
+        function click_event(){
+            let h3 = document.createElement('h3');
+            console.log(h3);
+            h3.innerHTML = 'creat h3 element';
+            document.body.appendChild(h3);
+        }
+      
+        function adding(){
+            let name = document.querySelector('#name').value;
+            console.log(name);
+            let ul = document.querySelector('#ul');
+            console.log(ul);
+            let li = document.createElement('li');
+            li.innerHTML = name;
+            console.log(li);
+            ul.appendChild(li);
+        }
+        
+        //About Attributes to add class in h1 tag by onclick changing color
+        function chanegeColor(){
+            let h1 = document.querySelector('#h1');
+            let att = h1.getAttribute('class');
+            if (att){
+                h1.removeAttribute('class')
+            }else{           
+            h1.setAttribute('class','header');           
+        }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
