@@ -354,7 +354,7 @@ margin-bottom: 20px;
     padding-top: 15px;
     margin-left: 300px;
     padding-bottom: 10px;
-
+    color:  rgb(99, 99, 99);
 }
 .ab1{
     float: left;
@@ -368,43 +368,54 @@ margin-bottom: 20px;
     background-color:rgb(0, 0, 0,0.1) ;
 }
 .kind{
+
+    padding: 40px 40px 60px ;
     display: grid;
-    grid-template-columns: auto auto;
-    background-color:rgb(99, 99, 99);
-    padding-bottom: 40px;
-    padding-right: 10px;
+    grid-template-columns: auto auto auto ;
+    grid-gap: 20px;
+    text-align: center;
+    background-color:  rgb(99, 99, 99) ;
+ 
 }
 
 .kind img{
     width:200px;
-    height: 200px;
-    float: left;
-    padding-right: 5px;
+    height: 200px; 
     border-radius: 10px;
-    margin:5px 5px;  
+    margin:20px;
+    box-shadow: 0 10px 25px  rgba(0, 0, 0, 0.404);
 }
 .kind div{
+    width:100%;
     padding-top: 30px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px  rgba(0, 0, 0, 0.404);
+
 
 }
 .kind p{
     text-align: justify;
-    color: white;
-    margin-left: 30px;
-    padding-top: 30px;
+    padding: 20px 30px 30px;
+    color:  rgb(99, 99, 99);
+
 }
 
 .kind h3{
     padding-left: 30px;
     margin-left: 10px;
-    color: white;
+    color:  rgb(99, 99, 99);
 }
 
 .aboutShop{
-    padding-top: 30px;
-    padding-bottom: 20px;
-    color:  rgb(99, 99, 99);
+    text-align: center;
+    color:white;
 
+}
+.back_about{
+    margin-top: 20px;
+    padding: 25px 0px;
+    background-color:  rgb(99, 99, 99);
 }
 /*  */
 .shop_room{
