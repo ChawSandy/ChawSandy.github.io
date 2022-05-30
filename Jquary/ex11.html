@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+    <script src="jquery.min.js"></script>
+    <script>
+                $(document).ready(function(){
+                    var sp = $("#user_spouse")
+                    $("#married").on("click",function(){                        
+                        var user_name = $("#username").val()
+                        sp.show()                 
+                    })
+                    $("#single").on("click",function(){
+                        sp.hide()                    
+                    })
+
+
+                    $("#myform").on("submit",function(e){
+                    var username = $("#username").val()
+                    var age = $("#age").val()
+                    var spounce =$("#user_spouse").val()
+                    if(spounce == '' ){
+                    var text1 = ` ${username} is single.`
+                    alert(text1)
+                    }else{
+                    var text2 = ` ${username} is marraige.His spounce is ${spounce}.`
+                    alert(text2)
+                    }
+                    if(age<18){
+                        e.preventDefault();
+                    }
+                    })
+                })
+     
+        
+    </script>
+    </head>
+<body>
+    <form action="" id="myform">
+    <input type="text" name="username" id="username" placeholder="Name">
+    <br><br>
+    <input type="number" name="age" id="age" placeholder="Age">
+    <br><br>
+    <div>
+    <input type="radio"  name="rs_status" id="single" value="single"><label for="rs_status">Single</label>
+    <input type="radio"  name="rs_status" id="married" value="married"><label for="rs_status">Married</label>
+    </div> 
+    <br>
+    <input type="text" name="user_spouse" id="user_spouse" placeholder="Spouse" style="display: none;">
+    <br><br>
+    <input type="submit" value="Save">
+    </form>
+</body>
+</html>

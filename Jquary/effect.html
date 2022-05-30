@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $("#hide").on("click",function(){
+                $("p").hide(5000);
+
+            })
+            $("#show").on("click",function(){
+                // $("p").hide(5000);
+                $("p").show("slow");
+            })
+            $("#toggle").on("click",function(){
+                // $("p").hide(5000);
+                $("p").toggle();
+            })
+            $("#fadeTo").on("click",function(){
+                // $("p").hide(5000);
+                $("p").fadeTo("slow",0.4);
+            })
+            $("#slideDownbtn").on("click",function(){
+                // $("p").hide(5000);
+                $("p").slideDown("slow");
+            })
+            $("#move").on("click",function(){
+                // $("p").hide(5000);
+               anime = $("#anime")
+               anime.animate({left:'250px'})
+            })
+            $("#changing").on("click",function(){
+                $("#p1").css("color","red")	.slideUp(2000)	.slideDown(2000);
+            })
+            
+            $("#mybtn").on("click",function(){
+                var myh1 = $("h1")
+                if(myh1.hasClass("red")){
+                myh1.addClass("red")
+            }
+            
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque, voluptate sapiente saepe reiciendis odit ipsum molestiae deleniti nostrum tempore? Aut porro itaque possimus, expedita, vero autem sequi rem voluptas debitis voluptate, maiores similique nesciunt. Delectus quae molestias cumque numquam provident quasi est voluptatum facere aut, earum nobis deleniti vero.</p>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque, voluptate sapiente saepe reiciendis odit ipsum molestiae deleniti nostrum tempore? Aut porro itaque possimus, expedita, vero autem sequi rem voluptas debitis voluptate, maiores similique nesciunt. Delectus quae molestias cumque numquam provident quasi est voluptatum facere aut, earum nobis deleniti vero.</p>
+    <h1>Hello JQ effect</h1>
+    <div style="width :100px; height: 100px; background-color: red; position: relative;" id="anime">
+
+    </div>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <button id="fadeTo">Fade to</button>
+    <button id="slideDownbtn">Slide Down</button>
+    <button id="move">Move Lf</button>
+
+    <button id="changing">changing</button>
+    <button id="mybtn">Add/Remove</button>
+</body>
+</html>

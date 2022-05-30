@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memes</title>
+    <script src="https://kit.fontawesome.com/d471208051.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+        .mytable{
+            margin-left: auto;
+            margin-right: auto;  
+            margin-top: 180px;
+        }
+
+        #scrolly{
+            width: 250px;
+            height: 80px;
+            overflow: auto;
+            overflow-y: hidden;
+            margin: 0 auto;
+            white-space: nowrap
+        }
+        /* for img */
+        .imgmeme{
+            width: 60px;
+            height: 60px;
+            display: inline;
+        }
+        /* for text */
+        h4{
+            display: inline-block;
+            margin: 0px;
+            padding: auto;
+        }
+        .mynewtext,.mydeftext{
+            margin: 0 px;
+            width: 80%;
+            height: 40px;
+            outline: none;
+            border: 1 solid gray;
+            display: inline-block;
+            padding: 0px;
+            margin-bottom: 8px;
+                
+        }
+        #searchtext{
+            margin-left:15px px;
+            width: 60%;
+            height: 40px;
+            outline: none;
+            border: none;
+            padding: 0px;
+        }
+        .searchbtn{
+            border:none;
+            position: relative;
+            left: 60px;
+            background-color: white;
+
+        }
+        #searchtext::placeholder{
+            font-size: larger;
+        }
+        .forsearch{
+            width: 270px;
+            border: 1px solid gray;
+            padding-left: 0px;
+            display: inline-block;
+        }
+        /* for btn */
+        #addbtn{
+            padding: 5px;
+            border: 1px solid gray;
+            border-radius: 3px;
+            margin-left: auto;
+            margin-right: auto; 
+            background-color: black;
+            color: white; 
+
+        }
+        #logo {
+        position: relative;
+        }
+        #changebtn {
+        background-color: black;
+        color: white;
+        padding: 20px 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        }
+
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>    
+
+                $(function(){
+                $('#changebtn').on("click",function (event) { 
+                    $(".mytable").show();
+                    $(".cover").hide();
+                    event.preventDefault();
+                })
+        // get meme
+                $.get("https://api.imgflip.com/get_memes",function(resp){
+                var imgArr = resp.data.memes;
+                var imgArrJson = JSON.stringify(imgArr);
+                localStorage.setItem("memes_img",imgArrJson)
+                })
+
+                getdata();
+                function getdata(){
+                var ls = localStorage.getItem("memes_img")
+                if(ls){
+                var imgArr = JSON.parse(ls)
+                var data =""
+
+                $.each(imgArr,function(i,v){
+                data += `
+                <img src="${v.url}" alt="" data-id="${i}" class="imgmeme">               
+                    `                   
+                })
+                $("#scrolly").html(data)
+                }
+                }
+
+            //End get
+            //showtitle
+            $("#scrolly").on("focus","img",function(){
+                    $(".defalutT").hide(); 
+
+                    var index = $(this).data("id")
+                    alert(index)
+                    var ls = localStorage.getItem("memes_img")
+                    if(ls){
+                    var imgArr = JSON.parse(ls)
+                    var showTT = imgArr[index].name;
+                    var tit =`<h4>${showTT}</h4>`
+                    $(".newTitle").html(tit)   
+                    getdata();
+                }
+            })
+            //endtitle
+
+            // clickimgshow
+
+                $("#scrolly").on("click","img",function(){
+                    $(".defalutimg").hide(); 
+                    $(".defaultT").hide(); 
+                    var index = $(this).data("id")
+                    var ls = localStorage.getItem("memes_img")
+                    if(ls){
+                    var imgArr = JSON.parse(ls)
+                    var showurl = imgArr[index].url
+                    var showTT = imgArr[index].name;
+                    var img =`<img src = "${showurl}" width="350px" height="400px" >`
+                    var tit =`<h4>${showTT}</h4>`
+                    $(".showimg").html(img)   
+                    $(".newTitle").html(tit)  
+                    getdata();
+                }
+            })
+            // endimgshow
+           
+            // fortext
+            var textArr =[
+                {name:"text#1", id: 1, placeholder: "text#1"},
+                {name:"text#2", id: 2, placeholder: "text#2"},
+                {name:"text#3", id: 3, placeholder: "text#3"},
+                {name:"text#4", id: 4, placeholder: "text#4"},
+                {name:"text#4", id: 5, placeholder: "text#5"},
+            ]
+             $("#mytbody").on("click","#addbtn",function(){   
+                var data=""
+                $.each(textArr,function(i,v){
+                    data += ` <div>
+                    <input type="text" placeholder="text#${v.id+2}" class="mynewtext"  >              
+                    </div>  `
+                    v.id++;
+                    return false;
+           })
+           $('.mytable tr td.mydivnew').append(data);        
+        })
+        // endtext
+
+    })
+
+
+    </script>
+</head>  
+<body>
+    <div class="cover">
+        <img src="logo.jpg" id="logo"  width="100%" height="600px" alt="" style="opacity: 0.7;">
+        <button id="changebtn">Click Here</button>
+    </div>
+
+    <table class="mytable" border="0" cellspacing="0" style="display: none;">
+        <tbody id="mytbody">
+            <tr>
+                <td rowspan="3" >
+                    <div  class="showimg" style="display:inline-block; margin-right: 50px; ">
+                    <img src="default.jpg"  class="defalutimg" alt=""  width="350px" height="400px" >
+                    </div>
+                </td>
+                <td colspan="6"> 
+                    <div class="forsearch">
+                        <input type="text" placeholder="search" id="searchtext">
+                        <button class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div>
+                    <h4 class="defaultT">Drake Hotline Bling</h4>
+                    </div> 
+                    <div class="newTitle">
+                    </div>
+                    <hr> 
+                     <div id='scrolly'></div>
+                     <hr>
+                </td> 
+
+            </tr>
+
+            <tr>
+                <td class="mydivnew">
+                    <div>
+                        <input type="text" placeholder="Top" class="mydeftext" id="top">              
+                        <input type="text" placeholder="Bottom" class="mydeftext"  id="bottom">              
+                    </div>  
+                </td>
+            <tr>
+                <td>
+    
+                    <div style = "position:relative; left:230px; top:2px; ">
+                        <button id="addbtn">Add Text</button>     
+                     </div>
+       
+                </td>                                  
+            </tr>
+        
+        </tbody>
+    </table>
+
+
+    <!-- for scroll img -->
+
+
+</body>
+</html>

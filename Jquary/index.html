@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ Introdution</title>
+   <!-- JQuery -->
+   <script src="jquery.min.js"></script>
+    <!-- Custom -->
+   <script src="custom.js"></script>
+
+    <script>
+        $(document).ready(function(){
+        var h2 = $("h2");
+        console.log(h2);
+        var mp = $("#myp");
+        console.log(mp);
+        var det = $(".detail");
+        console.log(det);
+        
+        var tr = $("#content ul.teacher li");
+        console.log(tr);
+
+            $("button").click(function(){
+                alert('ok')
+            })
+        })
+    </script>
+</head>
+<body>
+    <h2>Hello World</h2>
+    <h2>Hello JQ</h2>
+    <button>click</button>
+    <p id="myp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, voluptatem beatae. Eligendi officia voluptatum ipsam rem quibusdam, quos nulla? Esse sit perspiciatis molestiae velit? Saepe asperiores repellendus voluptatem distinctio reiciendis?</p>
+    <article class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore officiis nulla assumenda placeat excepturi quod ad commodi fugit minima vitae aut nihil sapiente perspiciatis illum alias a quia optio, voluptatem et itaque ratione. Quos adipisci ad vero iure molestias impedit natus, at alias quaerat nemo dignissimos eum facilis ab veniam?</article>
+    <div class="detail">
+        This is detail
+    </div>
+
+    <!-- #content ul.teacher li -->
+    <div id="content">
+    <ul class="teacher">
+        <li>Ag</li>
+        <li>Mh</li>
+        <li>Htet</li>
+        <li>Phu</li>
+    </ul>
+    <ul>
+        <li>mu</li>
+        <li>cc</li>
+    </ul>
+    </div>
+
+    <!-- <form action="">
+        <input type="text">
+    </form> -->
+
+</body>
+</html>
