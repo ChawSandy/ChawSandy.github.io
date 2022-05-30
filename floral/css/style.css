@@ -437,7 +437,7 @@ margin-bottom: 20px;
   
 }
 .shop_room div img{
-    width: 70%;
+    width: 200px;
     height: 200px;
     border-radius: 2px;
 }
@@ -531,7 +531,6 @@ margin-bottom: 20px;
     
 }
 .pop_kind{
-     background-color: r;
     display: grid;
     grid-template-columns: auto auto auto auto;
     margin-top: 20px;
@@ -542,7 +541,7 @@ margin-bottom: 20px;
 }
 
 .shop_img{
-    width: 100%;
+    width: 200px;
     height: 250px;
     border-radius: 5px;
     box-shadow: 0 10px 25px  rgb(0, 0, 0, 0.28);
@@ -570,7 +569,7 @@ margin-bottom: 20px;
     color: rgb(99, 99, 99);
 }
 .pop_new{
-    background-color: r;
+
    display: grid;
    grid-template-columns: auto auto auto ;
    margin-top: 20px;
