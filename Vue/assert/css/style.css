@@ -1,0 +1,58 @@
+*{
+    font-family: 'SourceSanPro_Regular';
+    background-color: #fde5ee;
+    color: #999999
+
+}
+.maincolor{
+    color: #fdec03;
+}
+
+input[type=number] {
+    background-color:#ffbefd;
+    box-sizing: border-box;
+    border: 1px solid#a9879c;
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgba(146, 84, 127,0.2);
+    border-radius: 3px ;
+
+
+  }
+  
+input[type=number]:focus {
+    color: #f100ea;
+    background-color: white;
+    border:1px solid#ffbefd ;
+    outline: none;
+
+  }
+/* .custom_bgcolor{
+} */
+button{
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid  #774747;
+    border-radius: 4px ;
+    background-color: #f100ea;
+    box-shadow: 0 4px 8px 0 rgba(146, 84, 127,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+}
+button:hover{
+    color: #f100ea;
+    border: 1px solid  #774747;
+    background-color: white;
+}
+.smallfont{
+    font-size: 12px;
+}
+.carousel-inner .carousel-item img{
+    height: 70vh;
+    object-fit: cover;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'SourceSanPro_Black';
+}
+
+.container{
+    box-shadow: 0 4px 8px 0 rgba(146, 84, 127,0.2);
+    margin: 0px;
+}

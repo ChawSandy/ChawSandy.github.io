@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="assert/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assert/css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    feet:null,
+                    inch:null,
+                    pound:null,
+                    result:null,
+
+                }
+            },
+
+            methods:{
+                calculate(){
+                  
+                   this.result=(this.pound*703/((this.feet*12)+this.inch)**2).toFixed(2);
+                },
+            },
+
+        })
+    </script>
+</head>
+<body> 
+
+    <div id = "app" class=" custom_bgcolor  ">
+            <h1 class="text-center mb-3">BMI Calculator</h1>  
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-xl-6 col-md-12 col-12">
+              <div class="card text-sm-center text-xl-start">
+                <div class="card-body">
+                  <h5 class="card-title" title="Enter your feet and inches">Height</h5>
+                  <input type="number" placeholder="feet"  v-model.number="feet" class="text1 mb-xl-0 mb-lg-0 mb-md-2 mb-sm-2  mb-2 ">&nbsp;
+                  <input type="number" placeholder="inches"  v-model.number="inch" >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-xl-6 col-md-12 col-12">
+              <div class="card text-sm-center text-xl-start">
+                <div class="card-body">
+                  <h5 class="card-title" title="Enter your pound">Weight</h5>
+                  <input type="number" placeholder="pound"  v-model.number="pound">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-xl-12 col-md-12 col-12 col-12">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Calculate BMI</h5>
+                    <button  @click="calculate" title="Calculate your BIM">Calculate</button>
+                </div>
+                </div>
+              </div>
+            <div class="col-sm-12 col-lg-12 col-xl-12 col-md-12 col-12 ">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <h5 class="card-title" title="Your BMI">BMI</h5>
+                    <input type="number" placeholder="BMI" v-model.number="result">
+                </div>
+                </div>
+              </div>
+            <div class="col-12 my-4" >
+              <p v-if="result==null " class="text-center fs-4" style="color:#999999;">Calculate your BMI</p>
+              <p v-else-if="result<18.5" style="color:blue ;" class="text-center fs-4">You are underweight.</p>
+              <p v-else-if="result>18.5 && result<24.9 " style="color:green ;" class="text-center fs-4">You are 	healthy.</p>
+              <p v-else-if="result>24.9 && result<29.9" style="color:orange ;" class="text-center fs-4">You are overweight.</p>
+              <p v-else-if="result>29.9" style="color:red ;" class="text-center fs-4">You are obese.</p>
+   
+          </div>
+        </div>
+    </div>      
+</div>
+
+    <script>
+    const mountedApp = app.mount("#app");
+    </script>
+    <script src="assert/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
